@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 //NS_ASSUME_NONNULL_BEGIN
 typedef void (^UIAlertViewBlock) (UIAlertView * alertView);
@@ -39,3 +41,4 @@ typedef void (^UIAlertViewCompletionBlock) (UIAlertView * alertView, NSInteger b
 @property (copy, nonatomic) BOOL(^shouldEnableFirstOtherButtonBlock)(UIAlertView* alertView);
 @end
 //NS_ASSUME_NONNULL_END
+#pragma clang diagnostic pop

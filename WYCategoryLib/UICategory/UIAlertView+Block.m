@@ -18,6 +18,8 @@ static const void *UIAlertViewWillDismissBlockKey                   = &UIAlertVi
 static const void *UIAlertViewDidDismissBlockKey                    = &UIAlertViewDidDismissBlockKey;
 static const void *UIAlertViewCancelBlockKey                        = &UIAlertViewCancelBlockKey;
 static const void *UIAlertViewShouldEnableFirstOtherButtonBlockKey  = &UIAlertViewShouldEnableFirstOtherButtonBlockKey;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 @implementation UIAlertView (Block)
 
@@ -241,3 +243,5 @@ static const void *UIAlertViewShouldEnableFirstOtherButtonBlockKey  = &UIAlertVi
 }
 
 @end
+
+#pragma clang diagnostic pop

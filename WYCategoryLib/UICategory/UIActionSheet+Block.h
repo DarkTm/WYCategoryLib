@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 typedef void (^UIActionSheetBlock) (UIActionSheet *actionSheet);
 typedef void (^UIActionSheetCompletionBlock) (UIActionSheet *actionSheet, NSInteger buttonIndex);
-
+#pragma clang diagnostic pop
 @interface UIActionSheet (Block)
 
 + (instancetype)showFromTabBar:(UITabBar *)tabBar

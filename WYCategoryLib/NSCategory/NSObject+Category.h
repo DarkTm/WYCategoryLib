@@ -16,17 +16,17 @@
 
 @interface NSObject (reflect)
 
--(id)initWithReflectData:(NSDictionary *)aDic;
--(NSMutableDictionary *)dictFromObject;
+- (instancetype)initWithReflectData:(NSDictionary *)aDic;
+- (NSMutableDictionary *)dictFromObject;
 
--(NSMutableArray *)getAttributeList;
+- (NSMutableArray *)getAttributeList;
 
 @end
 
 
 @interface NSObject (archiver)
 
-+(id)unArchiverWithPath:(NSString *)path;
-+(void)archiverWithObj:(id)obj withPath:(NSString *)path;
++ (id)unArchiverWithPath:(NSString *)path;
++ (void)archiverWithObj:(id)obj withPath:(NSString *)path;
 
 @end

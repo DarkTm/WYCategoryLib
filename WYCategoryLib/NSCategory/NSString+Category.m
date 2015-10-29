@@ -30,6 +30,8 @@
     return nil;
     
 }
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 - (NSString *)URLEncodingUTF8String{
     NSString *result = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
@@ -55,23 +57,20 @@
 @implementation NSString(md5)
 
 - (NSString *) md5{
-    const char *cStr = [self UTF8String];
-    unsigned char result[16];
-    CC_MD5( cStr, strlen(cStr),result );
-    NSMutableString *hash =[NSMutableString string];
-    for (int i = 0; i < 16; i++)
-        [hash appendFormat:@"%02X", result[i]];
-    return [hash uppercaseString];
+    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+    unsigned char digest[CC_MD5_DIGEST_LENGTH];
+    CC_MD5([data bytes], (CC_LONG)[data length], digest);
+    return [[NSString alloc] initWithBytes:digest length:CC_MD5_DIGEST_LENGTH encoding:NSUTF8StringEncoding];
 }
 
 - (NSString*)AES
 {
     NSData *plainData = [self dataUsingEncoding:NSUTF8StringEncoding];
     NSData *encryptedData = [plainData AES];
-    return [encryptedData base64Encoding];
+    return [encryptedData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
 }
 
-
+#pragma clang diagnostic pop
 @end
 
 #pragma mark - base64 -

@@ -20,7 +20,7 @@
 
 @implementation NSObject (reflect)
 
--(NSMutableArray *)getAttributeList{
+- (NSMutableArray *)getAttributeList{
     
     NSMutableArray *dictReturn = [[NSMutableArray alloc] initWithCapacity:10];
     
@@ -40,7 +40,7 @@
 }
 
 
--(id)initWithReflectData:(NSDictionary *)aDic{
+- (instancetype)initWithReflectData:(NSDictionary *)aDic{
         
     unsigned int varCount;
     
@@ -86,7 +86,7 @@
     return self;
 }
 
--(NSMutableDictionary *)dictFromObject {
+- (NSMutableDictionary *)dictFromObject {
     
     NSMutableDictionary *dictReturn = [[NSMutableDictionary alloc] init];
     
@@ -115,7 +115,7 @@
 
 @implementation NSObject (archiver)
 
-+(id)unArchiverWithPath:(NSString *)path{
++ (id)unArchiverWithPath:(NSString *)path{
     
     NSAssert(path != nil && path.length != 0, @"path is not nil");
     
@@ -130,7 +130,7 @@
     return archiverObj;
 }
 
-+(void)archiverWithObj:(id)obj withPath:(NSString *)path{
++ (void)archiverWithObj:(id)obj withPath:(NSString *)path{
     
     if(obj == nil){
         

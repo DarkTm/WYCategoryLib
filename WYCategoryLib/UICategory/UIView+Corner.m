@@ -121,7 +121,7 @@
     else
     {
         // Check to see if the resource bundle exists inside the top level bundle
-        NSBundle *resourcesBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"IQKeyboardManager" ofType:@"bundle"]];
+        NSBundle *resourcesBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"WYCategoryLib" ofType:@"bundle"]];
         NSArray *icon = @[@"",
                           @"icon_success.png",
                           @"icon_failed.png",

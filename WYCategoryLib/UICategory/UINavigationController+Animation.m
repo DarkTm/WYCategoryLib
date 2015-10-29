@@ -17,4 +17,8 @@ const float WYNavigationControllerAnimationDuration = 1.3;
     return [self.childViewControllers firstObject];
 }
 
+- (void)setRootViewController:(id)rootViewController {
+    [self setRootViewController:rootViewController];
+}
+
 @end
