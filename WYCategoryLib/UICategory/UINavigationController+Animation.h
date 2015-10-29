@@ -10,10 +10,6 @@
 
 @interface UINavigationController (Animation)
 
--(void)customerPopViewController;
-
--(void)customerPushViewController:(UIViewController *)c;
-
 @property (nonatomic, strong) id rootViewController;
 
 

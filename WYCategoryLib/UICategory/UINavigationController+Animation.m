@@ -13,35 +13,8 @@
 
 const float WYNavigationControllerAnimationDuration = 1.3;
 
--(void)customerPopViewController{
-
-    CATransition *transition = [CATransition animation];
-    transition.duration = WYNavigationControllerAnimationDuration;
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    transition.type = kCATransitionReveal;
-    transition.subtype = kCATransitionFromLeft;
-    [self.view.layer addAnimation:transition forKey:nil];
-    [self popViewControllerAnimated:NO];
-}
-
--(void)customerPushViewController:(UIViewController *)c{
-
-    CATransition *transition = [CATransition animation];
-    transition.duration = WYNavigationControllerAnimationDuration;
-    
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    transition.type = kCATransitionMoveIn;
-    transition.subtype = kCATransitionFromRight;
-    [self.view.layer addAnimation:transition forKey:nil];
-    [self pushViewController:c animated:NO];
-}
-
 - (id)rootViewController {
     return [self.childViewControllers firstObject];
-}
-
-- (void)setRootViewController:(id)rootViewController {
-    fLog();
 }
 
 @end
